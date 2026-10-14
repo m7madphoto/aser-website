@@ -9,12 +9,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Z9GLNX22EE');
-    document.addEventListener('click', function(e) {
+    function aserTrack(name) {
+      try { gtag('event', name, { event_category: 'contact', transport_type: 'beacon' }); } catch (_) {}
+      try { navigator.sendBeacon && navigator.sendBeacon('https://www.google-analytics.com/g/collect?v=2&tid=G-Z9GLNX22EE&cid=' + (Math.random()*1e10|0) + '.' + (Date.now()/1000|0) + '&en=' + name + '&dl=' + encodeURIComponent(location.href)); } catch (_) {}
+    }
+    document.addEventListener('pointerdown', function(e) {
       var t = e.target && e.target.closest ? e.target : null; if (!t) return;
-      var wa = t.closest('a[href*="wa.me"]'); var tel = t.closest('a[href^="tel:"]'); var mail = t.closest('a[href^="mailto:"]');
-      if (wa) gtag('event', 'contact_whatsapp', { event_category: 'contact' });
-      if (tel) gtag('event', 'contact_phone', { event_category: 'contact' });
-      if (mail) gtag('event', 'contact_email', { event_category: 'contact' });
+      if (t.closest('a[href*="wa.me"]')) aserTrack('contact_whatsapp');
+      else if (t.closest('a[href^="tel:"]')) aserTrack('contact_phone');
+      else if (t.closest('a[href^="mailto:"]')) aserTrack('contact_email');
     }, true);
     document.addEventListener('submit', function(e) {
       var f = e.target; if (f && f.getAttribute && f.getAttribute('data-register-form')) gtag('event', 'lead_form', { event_category: 'lead' });
