@@ -9,7 +9,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Z9GLNX22EE');
+    var aserLast = {};
     function aserTrack(name) {
+      var now = Date.now(); if (aserLast[name] && now - aserLast[name] < 2000) return; aserLast[name] = now;
       try { gtag('event', name, { event_category: 'contact', transport_type: 'beacon' }); } catch (_) {}
       try { navigator.sendBeacon && navigator.sendBeacon('https://www.google-analytics.com/g/collect?v=2&tid=G-Z9GLNX22EE&cid=' + (Math.random()*1e10|0) + '.' + (Date.now()/1000|0) + '&en=' + name + '&dl=' + encodeURIComponent(location.href)); } catch (_) {}
     }
@@ -20,7 +22,11 @@
       else if (t.closest('a[href^="mailto:"]')) aserTrack('contact_email');
     }, true);
     document.addEventListener('submit', function(e) {
-      var f = e.target; if (f && f.getAttribute && f.getAttribute('data-register-form')) gtag('event', 'lead_form', { event_category: 'lead' });
+      var f = e.target; if (f && f.getAttribute && f.getAttribute('data-register-form')) aserTrack('lead_form');
+    }, true);
+    document.addEventListener('pointerdown', function(e) {
+      var b = e.target && e.target.closest ? e.target.closest('form[data-register-form] button[type="submit"]') : null;
+      if (b && b.form && b.form.checkValidity && b.form.checkValidity()) aserTrack('lead_form');
     }, true);
   </script>
 
