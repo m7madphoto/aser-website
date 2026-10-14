@@ -3,6 +3,41 @@
 <head>
   <meta name="google-site-verification" content="tNOt90O_QvQwczwkXZ1jyChLglMT41AOm7G0i6JT6mI">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9GLNX22EE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z9GLNX22EE');
+    document.addEventListener('click', function(e) {
+      var t = e.target && e.target.closest ? e.target : null; if (!t) return;
+      var wa = t.closest('a[href*="wa.me"]'); var tel = t.closest('a[href^="tel:"]'); var mail = t.closest('a[href^="mailto:"]');
+      if (wa) gtag('event', 'contact_whatsapp', { event_category: 'contact' });
+      if (tel) gtag('event', 'contact_phone', { event_category: 'contact' });
+      if (mail) gtag('event', 'contact_email', { event_category: 'contact' });
+    }, true);
+    document.addEventListener('submit', function(e) {
+      var f = e.target; if (f && f.getAttribute && f.getAttribute('data-register-form')) gtag('event', 'lead_form', { event_category: 'lead' });
+    }, true);
+  </script>
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1239961379206371');
+    fbq('init', '590645635423634');
+    fbq('track', 'PageView');
+    (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function(){a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;r.src=n;var u=t.getElementsByTagName(s)[0];u.parentNode.insertBefore(r,u);})(window,document,'https://sc-static.net/scevent.min.js');
+    snaptr('init', '42877c46-eabd-443a-88d7-2dcc12312f0f', {});
+    snaptr('track', 'PAGE_VIEW');
+    document.addEventListener('click', function(e) {
+      var t = e.target && e.target.closest ? e.target : null; if (!t) return;
+      if (t.closest('a[href*="wa.me"], a[href^="tel:"], a[href^="mailto:"]')) { if (window.fbq) fbq('track', 'Contact'); if (window.snaptr) snaptr('track', 'SIGN_UP'); }
+    }, true);
+    document.addEventListener('submit', function(e) {
+      var f = e.target; if (f && f.getAttribute && f.getAttribute('data-register-form')) { if (window.fbq) { fbq('track', 'Contact'); fbq('track', 'Lead'); } if (window.snaptr) snaptr('track', 'SIGN_UP'); }
+    }, true);
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1239961379206371&ev=PageView&noscript=1"></noscript>
   <meta name="description" content="آسـر للتطوير والاستثمار العقاري، مطوّر سعودي في الرياض. وحدات سكنية في حي العارض (دانة الياسمين)، حي الزهرة وحي السويدي الغربي، بضمانات مكتوبة تصل إلى ١٠ سنوات وصيانة مجانية سنة كاملة.">
   <meta property="og:title" content="آسـر للتطوير والاستثمار العقاري | وحدات سكنية في الرياض">
   <meta property="og:description" content="وحدات سكنية في أحياء الرياض بضمانات تصل إلى ١٠ سنوات. سجّل اهتمامك الآن.">
