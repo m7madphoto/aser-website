@@ -1,0 +1,41 @@
+/* ─── Thmanyah Serif Display — Arabic Display Typeface ─── */
+
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('../assets/fonts/thmanyahserifdisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('../assets/fonts/thmanyahserifdisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('../assets/fonts/thmanyahserifdisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('../assets/fonts/thmanyahserifdisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'ThmanyahSerifDisplay';
+  src: url('../assets/fonts/thmanyahserifdisplay-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}

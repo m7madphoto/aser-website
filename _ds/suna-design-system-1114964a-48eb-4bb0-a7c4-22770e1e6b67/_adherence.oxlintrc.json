@@ -1,0 +1,400 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/social/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:ThmanyahSerifDisplay|Space Grotesk))/i]",
+        "message": "Font not provided by the design system. Available: ThmanyahSerifDisplay, Space Grotesk."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|color|size|lang|style|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: children, variant, color, size, lang, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:filled|outline|ghost)$/]",
+        "message": "<Badge> variant must be one of 'filled' | 'outline' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:orange|white|black)$/]",
+        "message": "<Badge> color must be one of 'orange' | 'white' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Badge> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='lang'] > Literal[value!=/^(?:ar|en)$/]",
+        "message": "<Badge> lang must be one of 'ar' | 'en'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|color|lang|muted|align|style|key|ref|className|style|children)$/]",
+        "message": "<Caption> doesn't accept that prop. Declared props: children, size, color, lang, muted, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:body|caption|label|title)$/]",
+        "message": "<Caption> size must be one of 'body' | 'caption' | 'label' | 'title'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:white|black|orange|muted)$/]",
+        "message": "<Caption> color must be one of 'white' | 'black' | 'orange' | 'muted'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute[name.name='lang'] > Literal[value!=/^(?:ar|en)$/]",
+        "message": "<Caption> lang must be one of 'ar' | 'en'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Caption'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|right|center)$/]",
+        "message": "<Caption> align must be one of 'left' | 'right' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|lang|size|tracking|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, color, lang, size, tracking, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:orange|white|black|muted)$/]",
+        "message": "<Eyebrow> color must be one of 'orange' | 'white' | 'black' | 'muted'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='lang'] > Literal[value!=/^(?:ar|en)$/]",
+        "message": "<Eyebrow> lang must be one of 'ar' | 'en'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:micro|label|sm)$/]",
+        "message": "<Eyebrow> size must be one of 'micro' | 'label' | 'sm'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='tracking'] > Literal[value!=/^(?:wide|wider|widest)$/]",
+        "message": "<Eyebrow> tracking must be one of 'wide' | 'wider' | 'widest'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|color|lang|weight|align|uppercase|style|key|ref|className|style|children)$/]",
+        "message": "<Headline> doesn't accept that prop. Declared props: children, size, color, lang, weight, align, uppercase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:display|headline|subheadline|title)$/]",
+        "message": "<Headline> size must be one of 'display' | 'headline' | 'subheadline' | 'title'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:white|black|orange)$/]",
+        "message": "<Headline> color must be one of 'white' | 'black' | 'orange'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute[name.name='lang'] > Literal[value!=/^(?:ar|en)$/]",
+        "message": "<Headline> lang must be one of 'ar' | 'en'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:light|regular|medium|bold|black)$/]",
+        "message": "<Headline> weight must be one of 'light' | 'regular' | 'medium' | 'bold' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Headline'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|right|center)$/]",
+        "message": "<Headline> align must be one of 'left' | 'right' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PostFrame'] > JSXAttribute > JSXIdentifier[name!=/^(?:ratio|bg|children|style|key|ref|className|style|children)$/]",
+        "message": "<PostFrame> doesn't accept that prop. Declared props: ratio, bg, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PostFrame'] > JSXAttribute[name.name='ratio'] > Literal[value!=/^(?:square|portrait|story|landscape|widescreen)$/]",
+        "message": "<PostFrame> ratio must be one of 'square' | 'portrait' | 'story' | 'landscape' | 'widescreen'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:number|label|color|labelColor|lang|size|style|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: number, label, color, labelColor, lang, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:orange|white|black)$/]",
+        "message": "<StatBlock> color must be one of 'orange' | 'white' | 'black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='labelColor'] > Literal[value!=/^(?:white|black|orange)$/]",
+        "message": "<StatBlock> labelColor must be one of 'white' | 'black' | 'orange'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='lang'] > Literal[value!=/^(?:ar|en)$/]",
+        "message": "<StatBlock> lang must be one of 'ar' | 'en'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:display|headline|title)$/]",
+        "message": "<StatBlock> size must be one of 'display' | 'headline' | 'title'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Caption": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Headline": {
+        "replaces": []
+      },
+      "PostFrame": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--color-accent",
+      "--color-accent-dark",
+      "--color-bg",
+      "--color-bg-alt",
+      "--color-bg-inverse",
+      "--color-black",
+      "--color-border",
+      "--color-border-light",
+      "--color-fg",
+      "--color-fg-inverse",
+      "--color-fg-muted",
+      "--color-gray-100",
+      "--color-gray-200",
+      "--color-gray-300",
+      "--color-gray-400",
+      "--color-gray-50",
+      "--color-gray-500",
+      "--color-gray-600",
+      "--color-gray-700",
+      "--color-gray-800",
+      "--color-gray-900",
+      "--color-gray-950",
+      "--color-orange",
+      "--color-orange-dark",
+      "--color-orange-light",
+      "--color-orange-mid",
+      "--color-orange-subtle",
+      "--color-pure-black",
+      "--color-pure-white",
+      "--color-white",
+      "--font-arabic",
+      "--font-latin",
+      "--gap-lg",
+      "--gap-md",
+      "--gap-sm",
+      "--gap-tight",
+      "--gap-xl",
+      "--gradient-orange-glow",
+      "--leading-loose",
+      "--leading-normal",
+      "--leading-relaxed",
+      "--leading-snug",
+      "--leading-tight",
+      "--post-margin-landscape",
+      "--post-margin-portrait",
+      "--post-margin-square",
+      "--post-margin-story",
+      "--post-pad-lg",
+      "--post-pad-md",
+      "--post-pad-sm",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-none",
+      "--radius-pill",
+      "--radius-sm",
+      "--space-0-5",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-20",
+      "--space-24",
+      "--space-3",
+      "--space-32",
+      "--space-4",
+      "--space-40",
+      "--space-48",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--space-px",
+      "--tracking-normal",
+      "--tracking-snug",
+      "--tracking-tight",
+      "--tracking-wide",
+      "--tracking-wider",
+      "--tracking-widest",
+      "--type-2xl",
+      "--type-2xs",
+      "--type-3xl",
+      "--type-4xl",
+      "--type-5xl",
+      "--type-6xl",
+      "--type-base",
+      "--type-body",
+      "--type-caption",
+      "--type-display",
+      "--type-headline",
+      "--type-label",
+      "--type-lg",
+      "--type-md",
+      "--type-micro",
+      "--type-sm",
+      "--type-subheadline",
+      "--type-title",
+      "--type-xl",
+      "--type-xs",
+      "--weight-black",
+      "--weight-bold",
+      "--weight-light",
+      "--weight-medium",
+      "--weight-regular"
+    ],
+    "tokenKinds": {
+      "--color-black": "color",
+      "--color-white": "color",
+      "--color-pure-white": "color",
+      "--color-pure-black": "color",
+      "--color-orange": "color",
+      "--color-orange-dark": "color",
+      "--color-orange-light": "color",
+      "--color-orange-subtle": "color",
+      "--color-orange-mid": "color",
+      "--color-gray-950": "color",
+      "--color-gray-900": "color",
+      "--color-gray-800": "color",
+      "--color-gray-700": "color",
+      "--color-gray-600": "color",
+      "--color-gray-500": "color",
+      "--color-gray-400": "color",
+      "--color-gray-300": "color",
+      "--color-gray-200": "color",
+      "--color-gray-100": "color",
+      "--color-gray-50": "color",
+      "--gradient-orange-glow": "color",
+      "--color-bg": "color",
+      "--color-bg-alt": "color",
+      "--color-bg-inverse": "color",
+      "--color-fg": "color",
+      "--color-fg-muted": "color",
+      "--color-fg-inverse": "color",
+      "--color-accent": "color",
+      "--color-accent-dark": "color",
+      "--color-border": "color",
+      "--color-border-light": "color",
+      "--font-arabic": "font",
+      "--font-latin": "font",
+      "--type-2xs": "font",
+      "--type-xs": "font",
+      "--type-sm": "font",
+      "--type-base": "font",
+      "--type-md": "font",
+      "--type-lg": "font",
+      "--type-xl": "font",
+      "--type-2xl": "font",
+      "--type-3xl": "font",
+      "--type-4xl": "font",
+      "--type-5xl": "font",
+      "--type-6xl": "font",
+      "--type-display": "font",
+      "--type-headline": "font",
+      "--type-subheadline": "font",
+      "--type-title": "font",
+      "--type-body": "font",
+      "--type-caption": "font",
+      "--type-label": "font",
+      "--type-micro": "font",
+      "--leading-tight": "font",
+      "--leading-snug": "font",
+      "--leading-normal": "font",
+      "--leading-relaxed": "font",
+      "--leading-loose": "font",
+      "--tracking-tight": "font",
+      "--tracking-snug": "font",
+      "--tracking-normal": "font",
+      "--tracking-wide": "font",
+      "--tracking-wider": "font",
+      "--tracking-widest": "font",
+      "--weight-light": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-bold": "font",
+      "--weight-black": "font",
+      "--space-px": "spacing",
+      "--space-0-5": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--space-20": "spacing",
+      "--space-24": "spacing",
+      "--space-32": "spacing",
+      "--space-40": "spacing",
+      "--space-48": "spacing",
+      "--post-margin-square": "spacing",
+      "--post-margin-portrait": "spacing",
+      "--post-margin-story": "spacing",
+      "--post-margin-landscape": "spacing",
+      "--post-pad-sm": "spacing",
+      "--post-pad-md": "spacing",
+      "--post-pad-lg": "spacing",
+      "--gap-tight": "spacing",
+      "--gap-sm": "spacing",
+      "--gap-md": "spacing",
+      "--gap-lg": "spacing",
+      "--gap-xl": "spacing",
+      "--radius-none": "radius",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius"
+    },
+    "fontFamilies": [
+      "Space Grotesk",
+      "ThmanyahSerifDisplay"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+/* ─── Suna Typography System ─── */
+
+/* Latin Display — Space Grotesk (Google Fonts substitute for no provided Latin file) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Font Families ── */
+  --font-arabic:  'ThmanyahSerifDisplay', 'Noto Serif Arabic', serif;
+  --font-latin:   'Space Grotesk', system-ui, sans-serif;
+
+  /* ── Raw Scale ── */
+  --type-2xs:  0.625rem;   /*  10px */
+  --type-xs:   0.75rem;    /*  12px */
+  --type-sm:   0.875rem;   /*  14px */
+  --type-base: 1rem;       /*  16px */
+  --type-md:   1.125rem;   /*  18px */
+  --type-lg:   1.5rem;     /*  24px */
+  --type-xl:   2rem;       /*  32px */
+  --type-2xl:  2.75rem;    /*  44px */
+  --type-3xl:  3.5rem;     /*  56px */
+  --type-4xl:  5rem;       /*  80px */
+  --type-5xl:  7rem;       /* 112px */
+  --type-6xl:  10rem;      /* 160px */
+
+  /* ── Semantic Post Sizes ── */
+  --type-display:      var(--type-5xl);
+  --type-headline:     var(--type-3xl);
+  --type-subheadline:  var(--type-2xl);
+  --type-title:        var(--type-xl);
+  --type-body:         var(--type-md);
+  --type-caption:      var(--type-sm);
+  --type-label:        var(--type-xs);
+  --type-micro:        var(--type-2xs);
+
+  /* ── Line Heights ── */
+  --leading-tight:    0.92;
+  --leading-snug:     1.05;
+  --leading-normal:   1.2;
+  --leading-relaxed:  1.5;
+  --leading-loose:    1.75;
+
+  /* ── Letter Spacing ── */
+  --tracking-tight:    -0.03em;
+  --tracking-snug:     -0.02em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.06em;
+  --tracking-wider:    0.12em;
+  --tracking-widest:   0.20em;
+
+  /* ── Font Weights ── */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-bold:     700;
+  --weight-black:    900;
+}
